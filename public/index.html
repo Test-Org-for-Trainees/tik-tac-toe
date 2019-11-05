@@ -6,26 +6,31 @@
 </head>
 
 <body class="background">
-
-<h1 class="h1">TIK TAC TOE</h1>
+		
+<video autoplay muted loop id="myVideo">
+	<source src="game background.mp4" type="video/mp4">
+</video>
+	
 <div class="container">
+	<h1 class="h1">TIK TAC TOE</h1>	
 
 	<div class="flex-container">
-		<div id="cell1" onclick = "test(this)">.</div>
-		<div id="cell2" onclick = "test(this)">.</div>
-		<div id="cell3" onclick = "test(this)">.</div>
+            
+		<div id="cell1" onclick = "change(this);this.onclick=null;"  x="0" y="0">.</div>
+		<div id="cell2" onclick = "change(this);this.onclick=null;"  x="0" y="1">.</div>
+		<div id="cell3" onclick = "change(this);this.onclick=null;" x="0" y="2">.</div>
 	</div>
 
 	<div class="flex-container">
-		<div id="cell4" onclick = "test(this)">.</div>
-		<div id="cell5" onclick = "test(this)">.</div>
-		<div id="cell6" onclick = "test(this)">.</div>
+		<div id="cell4" onclick = "change(this);this.onclick=null;" this.onclick="null"x="1" y="0">.</div>
+		<div id="cell5" onclick = "change(this);this.onclick=null;" x="1" y="1">.</div>
+		<div id="cell6" onclick = "change(this);this.onclick=null;" x="1" y="2">.</div>
 	</div>
 
 	<div class="flex-container">
-		<div id="cell7" onclick = "test(this)">.</div>
-		<div id="cell8" onclick = "test(this)">.</div>
-		<div id="cell9" onclick = "test(this)">.</div>
+		<div id="cell7" onclick = "change(this);this.onclick=null;"  x="2" y="0">.</div>
+		<div id="cell8" onclick = "change(this);this.onclick=null;" x="2" y="1">.</div>
+		<div id="cell9" onclick = "change(this);this.onclick=null;" x="2" y="2">.</div>
 	</div>
 
 </div>
