@@ -1,6 +1,8 @@
 
 .background{
-   background-image: url("background.jpg");
+   @media screen and (max-width: 992px);
+   width: 1350px;
+   height: 660px;
 }
 
 #myVideo {
@@ -9,36 +11,109 @@
    bottom: 0;
    min-width: 100%; 
    min-height: 100%;
+   z-index: -1;
  }
+
+.navigation{
+   width: 1350px;
+   height: 100px;
+}
+
+.h1{
+   text-align: center;
+   font-size: 70px;
+   color: white;
+}
+
+.h2{
+   text-align: center;
+   font-size: 20px;
+   color: white;
+}
+
+.msgh1{
+   text-align: center;
+   font-size: 55px;
+   font-family: Showcard Gothic;
+   color: #195087;
+   position: absolute;
+   top: 67px;
+   left: -68px;
+   background-color: transparent;
+   border: transparent;
+  
+}
+
+.textbox{
+   background-color: transparent;
+   color: rgb(255, 255, 255);
+   font-size: 15px;
+   font-family:Comic Sans MS;
+   text-transform: capitalize;
+}
+
+.bottom{
+   width: 1350px;
+   height:550px;
+}
+
+.right{
+   width: 334px;
+   height: 112px;
+   position: absolute;
+   left: 56px;
+   top: 227px;
+   border-style: solid;
+   border-color: white;
+}
 
 .container{
    position: absolute;
-   left: 33%;
+   width: 450px;
+   height: 550px;
+   align-items: center;
+   left: 32%;
+   top: 5%
 }
 
 .flex-container {
    display: flex;
-   width: 388px;
    justify-content: center;
    background-color: rgb(241, 241, 242);
 }
 
 .flex-container > div {
    background-color: rgb(14, 13, 13);
-   width: 103px;
-   margin: 12px;
+   width: 115px;
+   height: 115px;
+   margin: 15px;
    text-align: center;
-   line-height: 100px;
+   line-height: 180px;
    font-size: 0px;
    border-radius: 5px;
    border: solid;
    border-color: #010003;
    background-repeat: no-repeat;
-   background-size: 100px 100px;
+   background-size: 110px 110px;
 }
 
-.h1{
-   text-align: center;
-   font-size: 60px;
-   color: white;
+.left{
+   width: 450px;
+   height: 550px;
 }
+
+
+.popup{
+   position: absolute;
+   width: 450px;
+   height: 410px;
+   align-items: center;
+   left: 32%;
+   top: 10%;
+   z-index: -1;
+   
+}
+
+
+
+
