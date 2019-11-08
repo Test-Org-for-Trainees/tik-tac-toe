@@ -72,6 +72,7 @@ function myFunction() {
 
   }
   
+  
 function won(){
 
 	if (board[0][1] === board[0][0] && board[0][2] === board[0][0] ) {
@@ -91,50 +92,50 @@ function won(){
 		}
 	}	
 	else if (board[0][1] ===  board[1][1] && board[2][1] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
+		if (board[1][1] === "X") {
 			return "win Player 1";
 		}
-		else if (board[0][0] === "O") {
+		else if (board[1][1] === "O") {
 			return "win Player 2";
 		}	
 	}
 	else if (board[1][0] ===  board[1][1] && board[1][2] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
+		if (board[1][1] === "X") {
 			return "win Player 1";
 		}
-		else if (board[0][0] === "O") {
+		else if (board[1][1] === "O") {
 			return "win Player 2";
 		}
 	}
 	else if (board[0][2] ===  board[1][1] && board[2][0] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
+		if (board[1][1] === "X") {
 			return "win Player 1";
 		}
-		else if (board[0][0] === "O") {
+		else if (board[1][1] === "O") {
 			return "win Player 2";
 		}	
 	}
 	else if (board[0][0] ===  board[1][1] && board[2][2] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
+		if (board[1][1] === "X") {
 			return "win Player 1";
 		}
-		else if (board[0][0] === "O") {
+		else if (board[1][1] === "O") {
 			return "win Player 2";
 		}
 	}
 	else if (board[1][2] === board[2][2] && board[0][2] === board[2][2] ) {
-		if (board[0][0] === "X") {
+		if (board[2][2] === "X") {
 			return "win Player 1";
 		}
-		else if (board[0][0] === "O") {
+		else if (board[2][2] === "O") {
 			return "win Player 2";
 		}	
 	}
 	else if (board[2][1] === board[2][2] && board[2][0] === board[2][2] ) {
-		if (board[0][0] === "X") {
+		if (board[2][2] === "X") {
 			return "win Player 1";
 		}
-		else if (board[0][0] === "O") {
+		else if (board[2][2] === "O") {
 			return "win Player 2";
 		}
 
