@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
 	<script src="js/scripts.js"></script>
 </head>
@@ -13,39 +14,42 @@
 
 <div class="bottom" id ="bottom">
 
-<div class="right">
-		<h2 class="h2">Player 1 : <input type="text" class="textbox" id="txt1"></h2>
-		<h2 class="h2">Player 2 : <input type="text" class="textbox" id="txt2"></h2>
-</div>
+	<div class="right">
+			<h2 class="h2">Player 1 : <input type="text" class="textbox" id="txt1"></h2>
+			<h2 class="h2">Player 2 : <input type="text" class="textbox" id="txt2"></h2>
+	</div>
 
-<div class="popup" >
-	<h2 class="h2"> <input type="text" class="msgh1" id="msg"></h2>
-	<image src ="RemorsefulFakeDunlin-size_restricted.gif"></image>
-</div>
+<button onclick="myFunction()">Try it</button>
 
-<div class="container">
-
-	<h1 class="h1">TIK TAC TOE</h1>
+	<div id="myDIV" class="popup">
+		<h2 class="h2"> <input type="text" class="msgh1" id="msg"></h2>
+		<image src ="RemorsefulFakeDunlin-size_restricted.gif"></image>
 		
-	<div class="flex-container">
-		
-		<div id="cell1" onclick = "change(this);this.onclick=null;"  x="0" y="0"></div>
-		<div id="cell2" onclick = "change(this);this.onclick=null;"  x="0" y="1"></div>
-		<div id="cell3" onclick = "change(this);this.onclick=null;" x="0" y="2"></div>
 	</div>
 
-	<div class="flex-container">
-		<div id="cell4" onclick = "change(this);this.onclick=null;"x="1" y="0">.</div>
-		<div id="cell5" onclick = "change(this);this.onclick=null;" x="1" y="1"></div>
-		<div id="cell6" onclick = "change(this);this.onclick=null;" x="1" y="2"></div>
-	</div>
+	<div class="container">
 
-	<div class="flex-container">
-	<div id="cell7" onclick = "change(this);this.onclick=null;"  x="2" y="0"></div>
-	<div id="cell8" onclick = "change(this);this.onclick=null;" x="2" y="1"></div>
-	<div id="cell9" onclick = "change(this);this.onclick=null;" x="2" y="2"></div>
+		<h1 class="h1">TIK TAC TOE</h1>
+			
+		<div class="flex-container">
+			<div id="cell1" onclick = "change(this);this.onclick=null;" name ="cells" x="0" y="0" ele="1"></div>
+			<div id="cell2" onclick = "change(this);this.onclick=null;" name ="cells" x="0" y="1" ele="1"></div>
+			<div id="cell3" onclick = "change(this);this.onclick=null;" name ="cells" x="0" y="2"></div>
+		</div>
+
+		<div class="flex-container" >
+			<div id="cell4" onclick = "change(this);this.onclick=null;" name ="cells"x="1" y="0"></div>
+			<div id="cell5" onclick = "change(this);this.onclick=null;" name ="cells"x="1" y="1"></div>
+			<div id="cell6" onclick = "change(this);this.onclick=null;" name ="cells"x="1" y="2"></div>
+		</div>
+
+		<div class="flex-container">
+		<div id="cell7" onclick = "change(this);this.onclick=null;"  name ="cells" x="2" y="0"></div>
+		<div id="cell8" onclick = "change(this);this.onclick=null;" name ="cells" x="2" y="1"></div>
+		<div id="cell9" onclick = "change(this);this.onclick=null;" name ="cells" x="2" y="2"></div>
+		</div>
+
 	</div>
-</div>
 
 </div>
 
