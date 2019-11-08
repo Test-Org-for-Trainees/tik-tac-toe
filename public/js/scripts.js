@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$("#myDIV").hide();
+	$(".container").show();
+});
 
 var count = 0;
 var cellid;
@@ -20,15 +24,51 @@ function change(evt){
 		
 		$(cellid).css("background-image", "url(o.png)");
 		board[xpos][ypos] = "O";	
+	
 	}
 
     else{
 		
 		$(cellid).css("background-image", "url(x.png)");
-		board[xpos][ypos] = "X";	
+		board[xpos][ypos] = "X";
+		
+		}
+		won();
 	}
-}
 
+// function won(){
 
+// 		if(board[0] === ["X","X","X"]){
+// 		alert("player 1 u win !");
+		
+// 	}
+	
+// 	}
+	
 
+function won(){
+	if(count===5){
+		$("#myDIV").show();
+		$(".container").hide();
+		if(count===5){ 
+		var mess = $("#txt1").val();
+		$("#msg").val(mess);
+		
+		}
+		if(count===6){ 
+			var mess = $("#txt2").val();
+			$("#msg").val(mess);
+			}
 
+  }
+	}
+
+	function myFunction() {
+		
+		$("#myDIV").hide();
+		$(".container").show();
+		$("div[name='cells']").css("background-image", "none");
+		board = null;
+	
+	  }
+  
