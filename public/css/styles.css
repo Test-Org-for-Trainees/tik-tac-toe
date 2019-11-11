@@ -117,10 +117,12 @@
   
 }
 
-.btnclose {
-   float: left;
+.btnrestart {
+   position: absolute;
+   top: 358px;
+   left: 171px;
    color: #195087;
-   font-size: 40px;
+   font-size: 22px;
    font-weight: bold;
 }
 
