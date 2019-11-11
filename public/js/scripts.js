@@ -38,36 +38,43 @@ function change(evt){
 		
     }
         
-		
-    if(count === 5){
+	
         
-        winner = won();
-        if(winner =="~~~~ win X ~~~~" ){ 
-            var mess = $("#txt1").val() || "Player 1";
-            $("#msg").val(mess);
-        }
-    }
-
-    if(count === 6){
+        if(count === 5 || count === 6 ){
         
-        winner = won();
-        if(winner == "~~~~ win O ~~~~" ){
-            var mess = $("#txt2").val() || "Player 2";
-            $("#msg").val(mess);
-        }
+            winner = won();
+    
+            switch (winner){
+                
+                case "~~~~ win X ~~~~":
+                var mess = $("#txt1").val() || "Player 1";
+                $("#msg").val(mess);
 
-        else{
-            alert("Try Again");
-            return location.reload();
+                break;
+             
+                case "~~~~ win O ~~~~":
+                var mess = $("#txt2").val() || "Player 2";
+                $("#msg").val(mess);
+                
+                break;
 
-        }
+                case  "No winner":
+                if(count===6){
+                    
+                    setTimeout(function(){
+                        alert("Try again");
+                        Restart();
+                    },1000);
+                }
+                
+            }
+            showthewinner();  
+        }   
             
-    }   
         
-    showthewinner();
-}
-
-
+    }
+            
+     
 
   // winning rules
   function won(){
@@ -144,6 +151,9 @@ function change(evt){
         }
     }
 
+    return "No winner";
+    
+
 }       	
 
 
@@ -151,7 +161,7 @@ function change(evt){
 // show who is the winner
 
 function showthewinner(){
-	if(winner ===  "~~~~ win X ~~~~" || winner ===  "~~~~ win O ~~~~" ){
+	if(winner !== "No winner" ){
         $(".container").hide();  
 	    $("#myDIV").show();
     
@@ -159,8 +169,6 @@ function showthewinner(){
     }
 	
 }
-
-
 
 
 function Restart(){
