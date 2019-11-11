@@ -36,35 +36,35 @@ function change(evt){
 		$(cellid).css("background-image", "url(x.png)");
 		board[xpos][ypos] = "X";
 		
-        }
+    }
         
 		
-		if(count === 5){
-			
-			 winner = won();
-			if(winner =="~~~~ win X ~~~~" ){ 
-				var mess = $("#txt1").val() || "Player 1";
-				$("#msg").val(mess);
-			}
+    if(count === 5){
+        
+        winner = won();
+        if(winner =="~~~~ win X ~~~~" ){ 
+            var mess = $("#txt1").val() || "Player 1";
+            $("#msg").val(mess);
+        }
+    }
+
+    if(count === 6){
+        
+        winner = won();
+        if(winner == "~~~~ win O ~~~~" ){
+            var mess = $("#txt2").val() || "Player 2";
+            $("#msg").val(mess);
         }
 
-        if(count === 6){
-            
-            winner = won();
-            if(winner == "~~~~ win O ~~~~" ){
-                var mess = $("#txt2").val() || "Player 2";
-                $("#msg").val(mess);
-            }
+        else{
+            alert("Try Again");
+            return location.reload();
 
-            else{
-                alert("Try Again");
-                location.reload();
-    
-            }
-                
-        }   
+        }
             
-		showthewinner();
+    }   
+        
+    showthewinner();
 }
 
 
