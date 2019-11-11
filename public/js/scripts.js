@@ -1,3 +1,5 @@
+// hide winner gif
+
 $(document).ready(function(){
 	$("#myDIV").hide();
 	$(".container").show();
@@ -12,7 +14,9 @@ var board = [
 	["", "", ""],    
 	["", "", ""],
    ];
+   var winner;
 
+   // add values to array & fill X , O visually
 function change(evt){
 
 	cellid = "#" + evt.id;
@@ -32,113 +36,133 @@ function change(evt){
 		$(cellid).css("background-image", "url(x.png)");
 		board[xpos][ypos] = "X";
 		
-		}
-		won();
-	}
-
-// function won(){
-
-// 		if(board[0] === ["X","X","X"]){
-// 		alert("player 1 u win !");
+        }
+        
 		
-// 	}
-	
-// 	}
-	
+		if(count === 5){
+			
+			 winner = won();
+			if(winner =="~~~~ win X ~~~~" ){ 
+				var mess = $("#txt1").val() || "Player 1";
+				$("#msg").val(mess);
+			}
+        }
 
-function won(){
-	if(count===5){
-		$("#myDIV").show();
-		$(".container").hide();
-		if(count===5){ 
-		var mess = $("#txt1").val();
-		$("#msg").val(mess);
-		
-		}
-		if(count===6){ 
-			var mess = $("#txt2").val();
-			$("#msg").val(mess);
-		}
+        if(count === 6){
+            
+            winner = won();
+            if(winner == "~~~~ win O ~~~~" ){
+                var mess = $("#txt2").val() || "Player 2";
+                $("#msg").val(mess);
+            }
 
-  	}
+            else{
+                alert("Try Again");
+                location.reload();
+    
+            }
+                
+        }   
+            
+		showthewinner();
 }
 
-function myFunction() {
+
+
+  // winning rules
+  function won(){
+
+    if (board[0][1] === board[0][0] && board[0][2] === board[0][0] ) {
+        if (board[0][0] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[0][0] === "O") {
+            return "~~~~ win O ~~~~";
+        }
+    }
+
+    if (board[1][0] === board[0][0] && board[2][0] === board[0][0] ) {
+        if (board[0][0] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[0][0] === "O") {
+            return "~~~~ win O ~~~~";
+        }
+    }
+    
+    if (board[0][1] ===  board[1][1] && board[2][1] ===  board[1][1] ) {
+        if (board[1][1] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[1][1] === "O") {
+            return "~~~~ win O ~~~~";
+        }    
+    }
+
+    if (board[1][0] ===  board[1][1] && board[1][2] ===  board[1][1] ) {
+        if (board[1][1] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[1][1] === "O") {
+            return "~~~~ win O ~~~~";
+        }
+    }
+
+    if (board[0][2] ===  board[1][1] && board[2][0] ===  board[1][1] ) {
+        if (board[1][1] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[1][1] === "O") {
+            return "~~~~ win O ~~~~";
+        }    
+    }
+
+    if (board[0][0] ===  board[1][1] && board[2][2] ===  board[1][1] ) {
+        if (board[1][1] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[1][1] === "O") {
+            return "~~~~ win O ~~~~";
+        }
+    }
+
+    if (board[1][2] === board[2][2] && board[0][2] === board[2][2] ) {
+        if (board[2][2] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[2][2] === "O") {
+            return "~~~~ win O ~~~~";
+        }    
+    }
+
+    if (board[2][1] === board[2][2] && board[2][0] === board[2][2] ) {
+        if (board[2][2] === "X") {
+            return "~~~~ win X ~~~~";
+        }
+        else if (board[2][2] === "O") {
+            return "~~~~ win O ~~~~";
+        }
+    }
+
+}       	
+
+
+
+// show who is the winner
+
+function showthewinner(){
+	if(winner ===  "~~~~ win X ~~~~" || winner ===  "~~~~ win O ~~~~" ){
+        $(".container").hide();  
+	    $("#myDIV").show();
+    
+
+    }
 	
-	$("#myDIV").hide();
-	$(".container").show();
-	$("div[name='cells']").css("background-image", "none");
-	board = null;
+}
 
-  }
-  
-function won(){
 
-	if (board[0][1] === board[0][0] && board[0][2] === board[0][0] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}
-	}
-	else if (board[1][0] === board[0][0] && board[2][0] === board[0][0] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}
-	}	
-	else if (board[0][1] ===  board[1][1] && board[2][1] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}	
-	}
-	else if (board[1][0] ===  board[1][1] && board[1][2] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}
-	}
-	else if (board[0][2] ===  board[1][1] && board[2][0] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}	
-	}
-	else if (board[0][0] ===  board[1][1] && board[2][2] ===  board[1][1] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}
-	}
-	else if (board[1][2] === board[2][2] && board[0][2] === board[2][2] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}	
-	}
-	else if (board[2][1] === board[2][2] && board[2][0] === board[2][2] ) {
-		if (board[0][0] === "X") {
-			return "win Player 1";
-		}
-		else if (board[0][0] === "O") {
-			return "win Player 2";
-		}
 
-	else
-		return "Try Again";
-	}
-}	
+
+function Restart(){
+    location.reload();
+}
